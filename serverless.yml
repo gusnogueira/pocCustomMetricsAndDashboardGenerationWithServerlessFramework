@@ -1,0 +1,25 @@
+service: poc-metricas
+
+frameworkVersion: '3'
+
+resources:
+  Resources:
+    Dashboard:
+      Type: AWS::CloudWatch::Dashboard
+      Properties:
+        DashboardName: My-First-Dashboard
+        DashboardBody: ${file(./dashboard.js):toString}
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: sa-east-1
+  memorySize: 256
+
+functions:
+  test:
+    handler: handler.test
+    events:
+      - http:
+          method: GET
+          path: test

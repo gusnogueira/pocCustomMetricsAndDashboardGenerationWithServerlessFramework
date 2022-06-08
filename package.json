@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "aws-embedded-metrics": "^2.0.5",
+    "serverless-plugin-cloudwatch": "^0.1.12",
+    "serverless-plugin-cloudwatch-dashboard": "^1.2.0"
+  }
+}
